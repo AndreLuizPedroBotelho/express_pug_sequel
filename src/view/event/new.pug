@@ -1,11 +1,6 @@
 extends ../layout/main
-    
+include ./../mixins/form_event   
 block content
     h1.text-center #{msg} 
     form(action="/events/" method="POST")
-        div(class="form-group")
-            input(type="text", name="name", class="form-control", placeholder="Enter event name:")
-        div(class="form-group")
-            textarea( name="description", class="form-control" , placeholder="Enter event description:")
-        div(class="form-group")
-            button(type="submit", class="btn btn-success float-right") Save   
+        +form(event)

@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const methodOveride = require('body-parser')
+const methodOverride = require('method-override')
 const morgan = require('body-parser')
 const path = require('path');
 
@@ -9,7 +9,7 @@ const app = express()
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended:false }))
 app.use(bodyParser.json());
-app.use(methodOveride('_method'))
+app.use(methodOverride('_method'))
 
 app.set('view engine','pug');
 app.set('views', path.join(__dirname,'src/view'))

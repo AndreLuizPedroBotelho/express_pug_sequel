@@ -1,0 +1,7 @@
+extends ../layout/main
+include ./../mixins/form_event   
+    
+block content
+    h1.text-center= msg 
+    form(action="/events/"+ event.id + "/?_method=PUT" method="POST")
+        +form(event)
