@@ -1,6 +1,5 @@
-const express = require('express')
-const router = express.Router()
-
 module.exports = (app) => {
-    app.use('/',require('./controller/home/index')(router));
+    app.use('/',require('./controller/home/index'))
+    app.use('/events',require('./controller/events/index'))
+
 }

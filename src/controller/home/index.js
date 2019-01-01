@@ -1,5 +1,8 @@
-module.exports = (router) => {
+const express = require('express')
+const router = express.Router()
+
     router.get('/', require('./home'))
-    return router;
-}
+
+module.exports = router
+
 
